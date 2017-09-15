@@ -13,7 +13,7 @@ $(function() {
     * a related set of tests. This suite is all about the RSS
     * feeds definitions, the allFeeds variable in our application.
     */
-    describe('RSS Feeds', function() {
+    describe('RSS Feeds', () => {
         /* This is our first test - it tests to make sure that the
          * allFeeds variable has been defined and that it is not
          * empty. Experiment with this before you get started on
@@ -21,7 +21,7 @@ $(function() {
          * allFeeds in app.js to be an empty array and refresh the
          * page?
          */
-        it('are defined', function() {
+        it('are defined', () => {
             expect(allFeeds).toBeDefined();
             expect(allFeeds.length).not.toBe(0);
         });
@@ -53,17 +53,30 @@ $(function() {
 
     /* TODO: Write a new test suite named "The menu" */
 
-        /* TODO: Write a test that ensures the menu element is
+    describe('The Menu', () => {
+           /* TODO: Write a test that ensures the menu element is
          * hidden by default. You'll have to analyze the HTML and
          * the CSS to determine how we're performing the
          * hiding/showing of the menu element.
          */
 
-         /* TODO: Write a test that ensures the menu changes
-          * visibility when the menu icon is clicked. This test
-          * should have two expectations: does the menu display when
-          * clicked and does it hide when clicked again.
-          */
+        let menuIdentifier = document.body.className;
+
+        it("The menu starts off hidden",() => {
+            expect(menuIdentifier).toBe('menu-hidden');
+        });
+             /* TODO: Write a test that ensures the menu changes
+              * visibility when the menu icon is clicked. This test
+              * should have two expectations: does the menu display when
+              * clicked and does it hide when clicked again.
+              */
+        it("The menu changes visibility when menu icon is clicked", () => {
+            let classToggle = menuIdentifier;
+            //when the menu is not (USE CALLBACK)
+            expect(menuIdentifier).toBe('menu-hidden')
+            //when the menu is clicked
+        });
+    });
 
     /* TODO: Write a new test suite named "Initial Entries" */
 
