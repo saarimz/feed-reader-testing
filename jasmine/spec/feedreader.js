@@ -62,7 +62,7 @@ $(function() {
 
         let menuIdentifier = document.body.className;
 
-        it("The menu starts off hidden",() => {
+        it("starts off hidden",() => {
             expect(menuIdentifier).toBe('menu-hidden');
         });
              /* TODO: Write a test that ensures the menu changes
@@ -73,7 +73,7 @@ $(function() {
 
         let btn = $(".menu-icon-link");
 
-        it("should show menu if clicked, hide menu if clicked again", () => {
+        it("should change visibility if icon if clicked", () => {
             btn.click();
             expect($(body).hasClass('menu-hidden')).toEqual(false);
             btn.click();
@@ -93,6 +93,20 @@ $(function() {
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
 
+    describe("Initial Entries", () => {
+
+
+        beforeEach((done) => {
+            loadFeed(0, function(){
+                done();
+            });
+        });
+
+        it("there should at least be a single entry within the feed", (done) => {
+            expect($(".feed").children().length).toBeGreaterThan(0)
+            done();
+        });
+    });
     /* TODO: Write a new test suite named "New Feed Selection" */
 
         /* TODO: Write a test that ensures when a new feed is loaded
