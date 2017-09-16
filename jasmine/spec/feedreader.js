@@ -95,9 +95,10 @@ $(function() {
 
     describe("Initial Entries", () => {
 
-
+        let input = 1;
+        
         beforeEach((done) => {
-            loadFeed(0, function(){
+            loadFeed(input, function(){
                 done();
             });
         });
@@ -106,6 +107,7 @@ $(function() {
             expect($(".feed").children().length).toBeGreaterThan(0)
             done();
         });
+        
     });
     /* TODO: Write a new test suite named "New Feed Selection" */
 
