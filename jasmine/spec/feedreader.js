@@ -60,10 +60,9 @@ $(function() {
          * hiding/showing of the menu element.
          */
 
-        let menuIdentifier = document.body.className;
 
         it("starts off hidden",() => {
-            expect(menuIdentifier).toBe('menu-hidden');
+            expect($("body").hasClass('menu-hidden')).toEqual(true);
         });
              /* Write a test that ensures the menu changes
               * visibility when the menu icon is clicked. This test
@@ -75,9 +74,9 @@ $(function() {
 
         it("should change visibility if icon if clicked", () => {
             btn.click();
-            expect($(body).hasClass('menu-hidden')).toEqual(false);
+            expect($('body').hasClass('menu-hidden')).toEqual(false);
             btn.click();
-            expect($(body).hasClass('menu-hidden')).toEqual(false);
+            expect($('body').hasClass('menu-hidden')).toEqual(true);
         }) 
     });
             
