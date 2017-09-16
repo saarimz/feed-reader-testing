@@ -32,7 +32,7 @@ $(function() {
          * and that the URL is not empty.
          */
          it("URLs are defined and not empty",() => {
-            for (item of allFeeds) {
+            for (let item of allFeeds) {
                 expect(item.url).toBeDefined();
                 expect(item.url.length).not.toBe(0);
             }
@@ -43,7 +43,7 @@ $(function() {
          * and that the name is not empty.
          */
          it("Names are defined and not empty", () => {
-            for (item of allFeeds) {
+            for (let item of allFeeds) {
                 expect(item.name).toBeDefined();
                 expect(item.name.length).not.toBe(0);
             }
@@ -77,7 +77,7 @@ $(function() {
             expect($('body').hasClass('menu-hidden')).toEqual(false);
             btn.click();
             expect($('body').hasClass('menu-hidden')).toEqual(true);
-        }) 
+        });
     });
             
 
@@ -103,7 +103,7 @@ $(function() {
         });
 
         it("there should at least be a single entry within the feed", (done) => {
-            expect($(".feed").children().length).toBeGreaterThan(0)
+            expect($(".feed").children().length).toBeGreaterThan(0);
             done();
         });
         
@@ -131,7 +131,7 @@ $(function() {
         it("the content should actually change when a new feed is loaded", (done) => {
             expect(previousContent).not.toEqual(currentContent);
             done();
-        })
+        });
     });
         
 }());
