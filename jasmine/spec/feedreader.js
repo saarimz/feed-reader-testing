@@ -116,21 +116,21 @@ $(function() {
 
     describe("New Feed Selection", () => {
 
-        let currentContent, previousContent, input;
-
-        loadFeed(2, () => {
-            previousContent = $(".feed").contents().find("h2")[0].innerHTML;
-        });
+        let currentContent, previousContent;
 
         beforeEach((done) => {
             loadFeed(0,function(){
+                previousContent = $(".feed").contents().find("h2")[0].innerHTML;
                 done();
             });
         });
 
         it("the content should actually change when a new feed is loaded", (done) => {
-            expect(previousContent).not.toEqual(currentContent);
-            done();
+            loadFeed(1,function(){
+                currentContent = $(".feed").contents().find("h2")[0].innerHTML;
+                expect(previousContent).not.toEqual(currentContent);
+                done();
+            });
         });
     });
         
