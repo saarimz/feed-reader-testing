@@ -118,12 +118,12 @@ $(function() {
 
         let currentContent, previousContent, input;
 
-        loadFeed(0, () => {
+        loadFeed(2, () => {
             previousContent = $(".feed").contents().find("h2")[0].innerHTML;
         });
 
         beforeEach((done) => {
-            loadFeed(2,function(){
+            loadFeed(0,function(){
                 done();
             });
         });
