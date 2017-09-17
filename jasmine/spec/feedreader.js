@@ -103,7 +103,7 @@ $(function() {
         });
 
         it("there should at least be a single entry within the feed", (done) => {
-            expect($(".feed").children().length).toBeGreaterThan(0);
+            expect($(".feed .entry").length).toBeGreaterThan(0);
             done();
         });
         
